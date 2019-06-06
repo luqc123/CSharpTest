@@ -10,8 +10,10 @@ namespace ConsoleApplicationTest
     {
         static void Main(string[] args)
         {
-            AttributeTest attributeTest = new AttributeTest();
-            attributeTest.TestAttributeUsage();
+            //AttributeTest attributeTest = new AttributeTest();
+            //attributeTest.TestAttributeUsage();
+            //LambdaTest lambdaTest = new LambdaTest();
+            //lambdaTest.Test();
         }
     }
 }

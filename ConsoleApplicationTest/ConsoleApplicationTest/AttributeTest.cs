@@ -20,7 +20,7 @@ namespace ConsoleApplicationTest
         [A1,A2]
         class BaseClass { }
 
-        [A3,A3]
+        [A3,A2]
         class DerivedClass : BaseClass { }
 
         public void TestAttributeUsage ()
