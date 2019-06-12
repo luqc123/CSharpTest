@@ -19,14 +19,18 @@ namespace ConsoleApplicationTest
             //lambdaTest.Test();
 
             //TimerTest
-            TimerTest timerTest = new TimerTest();
-            timerTest.SetTimer();
-            Console.WriteLine("\nPress the Enter key to exit the application...\n");
-            Console.WriteLine("The application started at {0:HH:mm:ss.fff}", DateTime.Now);
-            Console.ReadLine();
-            timerTest.aTimer.Stop();
-            timerTest.aTimer.Dispose();
-            Console.WriteLine("Terminating the application...");
+            //TimerTest timerTest = new TimerTest();
+            //timerTest.SetTimer();
+            //Console.WriteLine("\nPress the Enter key to exit the application...\n");
+            //Console.WriteLine("The application started at {0:HH:mm:ss.fff}", DateTime.Now);
+            //Console.ReadLine();
+            //timerTest.aTimer.Stop();
+            //timerTest.aTimer.Dispose();
+            //Console.WriteLine("Terminating the application...");
+
+            //ObservableCollectionTest
+            CollectionTest collectionTest = new CollectionTest();
+            collectionTest.ObservableCollectionTest();
         }
     }
 }
