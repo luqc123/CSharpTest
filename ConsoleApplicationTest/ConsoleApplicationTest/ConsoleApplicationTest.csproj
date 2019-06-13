@@ -47,6 +47,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TimerTest.cs" />
+    <Compile Include="UnitTest\Subscription.cs" />
+    <Compile Include="UnitTest\SubscriptionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
