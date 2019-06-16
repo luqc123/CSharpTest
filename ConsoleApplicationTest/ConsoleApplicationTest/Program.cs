@@ -33,16 +33,20 @@ namespace ConsoleApplicationTest
             //collectionTest.ObservableCollectionTest();
 
             //ListTest
-            var singleList = new Generics.SingleList();
-            singleList.AddLast(1);
-            singleList.AddLast(2);
-            singleList.AddLast(3);
-            singleList.AddLast("1");
-            singleList.AddLast("2");
-            singleList.AddLast("3");
+            //var singleList = new Generics.SingleList();
+            //singleList.AddLast(1);
+            //singleList.AddLast(2);
+            //singleList.AddLast(3);
+            //singleList.AddLast("1");
+            //singleList.AddLast("2");
+            //singleList.AddLast("3");
 
-            foreach (var i in singleList)
-                Console.WriteLine(i);
+            //foreach (var i in singleList)
+            //    Console.WriteLine(i);
+
+            //ActionTest
+            ActionTest actionTest = new ActionTest();
+            actionTest.Test();
 
             
         }
