@@ -30,6 +30,7 @@ namespace WPFTest
             Binding binding = new Binding();
             //源
             binding.Source = stu;
+            //指的是Student类的Name属性
             binding.Path = new PropertyPath("Name");
 
             //使用Binding连接数据源和目标
@@ -39,7 +40,7 @@ namespace WPFTest
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            stu.Name = "Name";
+            stu.Name += "Hello";
         }
     }
 }
