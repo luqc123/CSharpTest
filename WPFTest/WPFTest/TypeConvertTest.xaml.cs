@@ -15,32 +15,19 @@ using System.Windows.Shapes;
 namespace WPFTest
 {
     /// <summary>
-    /// Window1.xaml 的交互逻辑
+    /// TypeConvertTest.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1 : Window
+    public partial class TypeConvertTest : Window
     {
-        Student stu;
-        public Window1()
+        public TypeConvertTest()
         {
             InitializeComponent();
-
-            stu = new Student();
-
-            //准备绑定
-            Binding binding = new Binding();
-            //源
-            binding.Source = stu;
-            //指的是Student类的Name属性
-            binding.Path = new PropertyPath("Name");
-
-            //使用Binding连接数据源和目标
-            BindingOperations.SetBinding(this.textBoxName, TextBox.TextProperty, binding);
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            stu.Name += "Hello";
+            Human h = (Human)this.FindResource("human");
+            MessageBox.Show(h.Child.Name);
         }
     }
 }
