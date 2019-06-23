@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConsoleApplicationTest.Generics;
 
 namespace ConsoleApplicationTest
 {
@@ -33,22 +35,27 @@ namespace ConsoleApplicationTest
             //collectionTest.ObservableCollectionTest();
 
             //ListTest
-            //var singleList = new Generics.SingleList();
-            //singleList.AddLast(1);
-            //singleList.AddLast(2);
-            //singleList.AddLast(3);
-            //singleList.AddLast("1");
-            //singleList.AddLast("2");
-            //singleList.AddLast("3");
+            //var doubleList = new Generics.DoubleListT<int>();
+            //doubleList.AddLast(1);
+            //doubleList.AddLast(2);
+            //doubleList.AddLast(3);
 
-            //foreach (var i in singleList)
+            //foreach (var i in doubleList)
             //    Console.WriteLine(i);
 
-            //ActionTest
-            ActionTest actionTest = new ActionTest();
-            actionTest.Test();
+            var documentManager = new DocumentManager<Document>();
+            documentManager.AddDocument(new Document("Title A", "Sample A"));
+            documentManager.AddDocument(new Document("Title B", "Sample B"));
+            documentManager.DisplayAllDocument();
+            if(documentManager.IsDocumentAvailable)
+            {
+                var dm = documentManager.GetDocument();
+                Console.WriteLine("Title is {0},Content is {1}", dm.Title, dm.Content);
+            }
 
-            
+            //ActionTest
+            //ActionTest actionTest = new ActionTest();
+            //actionTest.Test();            
         }
     }
 }

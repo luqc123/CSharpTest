@@ -44,8 +44,11 @@
     <Compile Include="ActionTest.cs" />
     <Compile Include="AttributeTest.cs" />
     <Compile Include="CollectionTest.cs" />
+    <Compile Include="Generics\Document.cs" />
+    <Compile Include="Generics\DocumentManager.cs" />
+    <Compile Include="Generics\IDocument.cs" />
     <Compile Include="Generics\ListNode.cs" />
-    <Compile Include="Generics\SingleList.cs" />
+    <Compile Include="Generics\DoubleList.cs" />
     <Compile Include="LambdaTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
