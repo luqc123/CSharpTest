@@ -24,5 +24,10 @@ namespace FirstWPFApp
         {
             InitializeComponent();
         }
+
+        public ExpenseReportPage(object data) : this()
+        {
+            this.DataContext = data;
+        }
     }
 }

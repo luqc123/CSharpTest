@@ -67,7 +67,8 @@
         </ListBox>
 
         <!-- View report button -->
-        <Button Grid.Column="1" Grid.Row="3" Margin="0,10,0,0" Width="124" Height="25" HorizontalAlignment="Right">View</Button>
+        <Button Grid.Column="1" Grid.Row="3" Margin="0,10,0,0" Width="124" Height="25" HorizontalAlignment="Right"
+                Click="Button_Click">View</Button>
     </Grid>
         
 </Page>
