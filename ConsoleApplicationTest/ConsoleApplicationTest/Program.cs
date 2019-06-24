@@ -43,19 +43,25 @@ namespace ConsoleApplicationTest
             //foreach (var i in doubleList)
             //    Console.WriteLine(i);
 
-            var documentManager = new DocumentManager<Document>();
-            documentManager.AddDocument(new Document("Title A", "Sample A"));
-            documentManager.AddDocument(new Document("Title B", "Sample B"));
-            documentManager.DisplayAllDocument();
-            if(documentManager.IsDocumentAvailable)
-            {
-                var dm = documentManager.GetDocument();
-                Console.WriteLine("Title is {0},Content is {1}", dm.Title, dm.Content);
-            }
+            //var documentManager = new DocumentManager<Document>();
+            //documentManager.AddDocument(new Document("Title A", "Sample A"));
+            //documentManager.AddDocument(new Document("Title B", "Sample B"));
+            //documentManager.DisplayAllDocument();
+            //if(documentManager.IsDocumentAvailable)
+            //{
+            //    var dm = documentManager.GetDocument();
+            //    Console.WriteLine("Title is {0},Content is {1}", dm.Title, dm.Content);
+            //}
 
             //ActionTest
             //ActionTest actionTest = new ActionTest();
             //actionTest.Test();            
+
+            //Delegate Test
+            //DelegateTest delegateTest = new DelegateTest();
+            //delegateTest.Test();
+            // error
+            //var v = x => x;
         }
     }
 }
