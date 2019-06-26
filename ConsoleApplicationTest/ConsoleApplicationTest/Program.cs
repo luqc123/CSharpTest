@@ -62,6 +62,10 @@ namespace ConsoleApplicationTest
             //delegateTest.Test();
             // error
             //var v = x => x;
+
+            //DependencyProperty Test
+            DependencyPropertyTest dpt = new DependencyPropertyTest();
+            dpt.Test();
         }
     }
 }

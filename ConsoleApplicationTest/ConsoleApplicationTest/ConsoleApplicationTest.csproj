@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,12 +41,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionTest.cs" />
     <Compile Include="AttributeTest.cs" />
     <Compile Include="CollectionTest.cs" />
     <Compile Include="DelegateTest.cs" />
+    <Compile Include="DependencyPropertyTest.cs" />
     <Compile Include="EventTest.cs" />
     <Compile Include="Generics\Document.cs" />
     <Compile Include="Generics\DocumentManager.cs" />
