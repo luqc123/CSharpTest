@@ -64,8 +64,18 @@ namespace ConsoleApplicationTest
             //var v = x => x;
 
             //DependencyProperty Test
-            DependencyPropertyTest dpt = new DependencyPropertyTest();
-            dpt.Test();
+            //DependencyPropertyTest dpt = new DependencyPropertyTest();
+            //dpt.Test();
+
+            var obj = new DependencyPropertyTest();
+            obj.ValueChanged += (send,e) =>
+            {
+                Console.WriteLine("value changed from {0} to {1}", e.OldValue, e.NewValue);
+            };
+            obj.MyValue = 23;
+            Console.WriteLine(obj.Maximum);
+            obj.MyValue = 223;
+            Console.WriteLine(obj.MyValue);
         }
     }
 }

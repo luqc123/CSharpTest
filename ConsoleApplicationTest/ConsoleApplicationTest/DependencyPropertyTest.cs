@@ -7,10 +7,11 @@ using System.Windows;
 
 namespace ConsoleApplicationTest
 {
-    class DependencyPropertyTest : DependencyObject
+    class DependencyPropertyTest : UIElement
     {
         public static readonly DependencyProperty MyValueProperty =
-            DependencyProperty.Register("MyValue", typeof(int), typeof(DependencyPropertyTest), new PropertyMetadata(0));
+            DependencyProperty.Register("MyValue", typeof(int), typeof(DependencyPropertyTest), new PropertyMetadata(0,OnValueChanged
+                ,null));
 
         public int MyValue
         {
@@ -50,6 +51,36 @@ namespace ConsoleApplicationTest
             DependencyPropertyTest dt = (DependencyPropertyTest)element;
             return newValue;
         }
+
+        private static void OnValueChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+        {
+            DependencyPropertyTest dt = (DependencyPropertyTest)obj;
+            RoutedPropertyChangedEventArgs<int> e = new RoutedPropertyChangedEventArgs<int>((int)args.OldValue, (int)args.NewValue,
+                ValueChangedEvent);
+            dt.OnValueChanged(e);
+        }
+
+        public static readonly RoutedEvent ValueChangedEvent = EventManager.RegisterRoutedEvent("ValueChanged", RoutingStrategy.Bubble
+            , typeof(RoutedPropertyChangedEventHandler<int>), typeof(DependencyPropertyTest));
+
+        public event RoutedPropertyChangedEventHandler<int> ValueChanged
+        {
+            add
+            {
+                AddHandler(ValueChangedEvent, value);
+            }
+            remove
+            {
+                RemoveHandler(ValueChangedEvent, value);
+            }
+        }
+
+        protected virtual void OnValueChanged(RoutedPropertyChangedEventArgs<int> e)
+        {
+            RaiseEvent(e);
+        }
+
+
 
         public void Test()
         {

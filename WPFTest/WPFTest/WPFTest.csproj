@@ -71,8 +71,14 @@
     <Compile Include="ButtonsWithContent.xaml.cs">
       <DependentUpon>ButtonsWithContent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DependencyInherit.xaml.cs">
+      <DependentUpon>DependencyInherit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RoutedEventTest.xaml.cs">
       <DependentUpon>RoutedEventTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleBinding.xaml.cs">
+      <DependentUpon>SimpleBinding.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Human.cs" />
@@ -92,6 +98,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DependencyInherit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -105,6 +115,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RoutedEventTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SimpleBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
