@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="StyleTest1.xaml.cs">
+      <DependentUpon>StyleTest1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StyleTest2.xaml.cs">
+      <DependentUpon>StyleTest2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TypeConvertTest.xaml.cs">
       <DependentUpon>TypeConvertTest.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SimpleBinding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleTest1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleTest2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
