@@ -77,6 +77,9 @@
     <Compile Include="RoutedEventTest.xaml.cs">
       <DependentUpon>RoutedEventTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RoutedEventTest1.xaml.cs">
+      <DependentUpon>RoutedEventTest1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SimpleBinding.xaml.cs">
       <DependentUpon>SimpleBinding.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RoutedEventTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutedEventTest1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
