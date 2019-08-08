@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WPFTest
 {
     /// <summary>
-    /// RoutedEventTest.xaml 的交互逻辑
+    /// Interaction logic for MyUserControl1.xaml
     /// </summary>
-    public partial class RoutedEventTest : Window
+    public partial class MyUserControl1 : UserControl
     {
-        public RoutedEventTest()
+        public MyUserControl1()
         {
             InitializeComponent();
-            this.gridRoot.AddHandler(Button.ClickEvent,new RoutedEventHandler(ButtonLeft_Click));
-        }
-
-        private void ButtonLeft_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show((e.OriginalSource as FrameworkElement).Name);
-
         }
     }
 }

@@ -68,18 +68,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AttachedEventTest.xaml.cs">
+      <DependentUpon>AttachedEventTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ButtonsWithContent.xaml.cs">
       <DependentUpon>ButtonsWithContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEventArgs.cs" />
+    <Compile Include="CustomEventTest.xaml.cs">
+      <DependentUpon>CustomEventTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="DependencyInherit.xaml.cs">
       <DependentUpon>DependencyInherit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MyUserControl1.xaml.cs">
+      <DependentUpon>MyUserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OriginalSourceTest.xaml.cs">
+      <DependentUpon>OriginalSourceTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RoutedEventTest.xaml.cs">
       <DependentUpon>RoutedEventTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RoutedEventTest1.xaml.cs">
-      <DependentUpon>RoutedEventTest1.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="RoutedStudent.cs" />
     <Compile Include="SimpleBinding.xaml.cs">
       <DependentUpon>SimpleBinding.xaml</DependentUpon>
     </Compile>
@@ -103,7 +114,15 @@
     <Compile Include="Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
+    <Page Include="AttachedEventTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ButtonsWithContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomEventTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,11 +142,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RoutedEventTest.xaml">
+    <Page Include="MyUserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RoutedEventTest1.xaml">
+    <Page Include="OriginalSourceTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RoutedEventTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

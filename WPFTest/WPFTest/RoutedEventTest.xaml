@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="RoutedEventTest" Height="450" Width="800">
     <Grid x:Name="gridRoot" Margin="10" Background="Blue">
-        <Grid x:Name="gridA" Margin="10" Background="Red" ButtonBase.Click="ButtongLeft_Click">
+        <Grid x:Name="gridA" Margin="10" Background="Red" ButtonBase.Click="ButtonLeft_Click">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Canvas x:Name="canvansLeft" Grid.Column="0" Background="Pink">
                 <Button x:Name="buttonLeft" Content="Left" Margin="20"
-                    Width="40" Height="100" Click="ButtongLeft_Click"/>
+                    Width="40" Height="100" Click="ButtonLeft_Click"/>
             </Canvas>
             <Canvas x:Name="canvansRight" Grid.Column="1" Background="Yellow">
                 <Button x:Name="buttonRight" Content="Right" Margin="20"
