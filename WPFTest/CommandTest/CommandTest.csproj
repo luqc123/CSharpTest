@@ -61,12 +61,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearCommand.cs" />
     <Compile Include="CommandPrameterTest1.xaml.cs">
       <DependentUpon>CommandPrameterTest1.xaml</DependentUpon>
     </Compile>
     <Compile Include="CommandTest1.xaml.cs">
       <DependentUpon>CommandTest1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomCommandTest.xaml.cs">
+      <DependentUpon>CustomCommandTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IView.cs" />
+    <Compile Include="MiniView.xaml.cs">
+      <DependentUpon>MiniView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyCommandSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -98,6 +107,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CommandTest1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomCommandTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiniView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
