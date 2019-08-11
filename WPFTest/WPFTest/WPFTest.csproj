@@ -87,6 +87,9 @@
     <Compile Include="OriginalSourceTest.xaml.cs">
       <DependentUpon>OriginalSourceTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ResourceTest1.xaml.cs">
+      <DependentUpon>ResourceTest1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RoutedEventTest.xaml.cs">
       <DependentUpon>RoutedEventTest.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ResourceTest1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RoutedEventTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,7 +205,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -216,6 +223,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Audio\180 RPM.mp3" />
+    <Resource Include="Resource\Images\CertificateNormal.png" />
+    <Resource Include="Resource\Images\CertificatePressed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
