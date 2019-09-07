@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionTest.cs" />
+    <Compile Include="ArrayTest.cs" />
     <Compile Include="AttributeTest.cs" />
     <Compile Include="CollectionTest.cs" />
     <Compile Include="DelegateTest.cs" />
