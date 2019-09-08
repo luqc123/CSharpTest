@@ -1,0 +1,135 @@
+﻿<Window x:Class="StyleTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleTest"
+        mc:Ignorable="d"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        Title="MainWindow" Height="300" Width="500">
+    <Window.Resources>
+        <FontFamily x:Key="ButtonFontFamily">Time New Roman</FontFamily>
+        <FontWeight x:Key="ButtonFontWeight">Bold</FontWeight>
+        <s:Double x:Key="ButtonFontSize">18</s:Double>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="0">
+            <StackPanel.Resources>
+                <Style x:Key="BigFontButton">
+                    <Style.Setters>
+                        <Setter Property="Control.FontFamily" Value="Times New Roman"/>
+                        <Setter Property="Control.FontSize" Value="18"/>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="Control.IsFocused" Value="True">
+                            <Setter Property="Control.Foreground" Value="Orange"/>
+                        </Trigger>
+                        <Trigger Property="Control.IsMouseOver" Value="True">
+                            <Setter Property="Control.Foreground" Value="Yellow"/>
+                            <Setter Property="Control.FontWeight" Value="Bold"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="Control.Foreground" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                 </Style>
+            </StackPanel.Resources>
+            <Button Margin="5" Padding="5"
+            Style="{StaticResource BigFontButton}">
+                A Customed Button
+            </Button>
+            <TextBlock Margin="5">Normal Content</TextBlock>
+            <Button Margin="5" Padding="5">
+                A Normal Button
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2" Margin="5">
+            <StackPanel.Resources>
+                <Style x:Key="BigFontButtonStyle">
+                    <Style.Setters>
+                        <Setter Property="Control.FontSize" Value="18"/>
+                        <Setter Property="Control.FontWeight" Value="Bold"/>
+                    </Style.Setters>
+                </Style>
+                <Style x:Key="InheritBigFontButtonStyle" BasedOn="{StaticResource BigFontButtonStyle}">
+                    <Style.Setters>
+                        <Setter Property="Control.Background" Value="Red"/>
+                    </Style.Setters>
+                </Style>
+            </StackPanel.Resources>
+            <Button Margin="5" Padding="5"
+            Style="{StaticResource BigFontButtonStyle}">
+                A Customed Button
+            </Button>
+            <TextBlock Margin="5">Normal Content</TextBlock>
+            <Button Margin="5" Padding="5" Style="{StaticResource InheritBigFontButtonStyle}">
+                A More Customed Button
+            </Button>
+        </StackPanel>
+        <GridSplitter Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+            Width="3" VerticalAlignment="Center" HorizontalAlignment="Center"
+            ShowsPreview="True"/>
+        <Button Grid.Row="1" Grid.Column="0"
+            FontFamily="{StaticResource ButtonFontFamily}"
+            FontSize="{StaticResource ButtonFontSize}"
+            FontWeight="{StaticResource ButtonFontWeight}">
+            From Resource
+        </Button>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <StackPanel.Resources>
+                <Style x:Key="MouseOverHighlightStyle">
+                    <Setter Property="TextBlock.Padding" Value="5"/>
+                    <EventSetter Event="FrameworkElement.MouseEnter"
+                        Handler="element_MouseEnter">
+                    </EventSetter>
+                    <EventSetter Event="FrameworkElement.MouseLeave" 
+                        Handler="element_MouseLeave">
+                    </EventSetter>
+                </Style>
+                <Style x:Key="ButtonTrigger">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2"
+                                            Storyboard.TargetProperty="FontSize" To="22"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" Storyboard.TargetProperty="FontSize"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions> 
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <Button Margin="5" Padding="5"
+                Style="{StaticResource ButtonTrigger}"
+                    >
+                A Customed Button
+            </Button>
+            <TextBlock Margin="5" Style="{StaticResource MouseOverHighlightStyle}">Over Me</TextBlock>
+            <Button Margin="5" Padding="5">
+                A Normal Button
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
