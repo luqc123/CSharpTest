@@ -78,9 +78,16 @@ namespace ConsoleApplicationTest
             //Console.WriteLine(obj.MyValue);
 
             //ArrayTest
-            ArrayTest.InitTest();
-            ArrayTest.Test1();
-            ArrayTest.MultiArrayTest();
+            //ArrayTest.InitTest();
+            //ArrayTest.Test1();
+            //ArrayTest.MultiArrayTest();
+
+            //StringTest.StringTest1();
+            //StringTest.StringTest2();
+            //StringTest.StringTest3();
+            StringTest.StringTest4();
+            StringTest.StringTest5();
+
         }
     }
 }
