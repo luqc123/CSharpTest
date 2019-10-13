@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ConsoleApplicationTest.Generics;
+using System.Windows;
 
 namespace ConsoleApplicationTest
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             //AttributeTest
@@ -85,9 +87,35 @@ namespace ConsoleApplicationTest
             //StringTest.StringTest1();
             //StringTest.StringTest2();
             //StringTest.StringTest3();
-            StringTest.StringTest4();
-            StringTest.StringTest5();
+            //StringTest.StringTest4();
+            //StringTest.StringTest5();
+            //StringBuilder sp = new StringBuilder();
 
+            //sp.Append("symbolname+errmessage");
+            //sp.AppendLine();
+            //sp.Append("symbolname+errmessage");
+            //sp.AppendLine();
+            //sp.Append("symbolname+errmessage");
+            //sp.AppendLine();
+            //sp.Append("symbolname+errmessage");
+            //sp.AppendLine();
+
+            //string msg = sp.ToString();
+
+            //MessageBoxResult result = MessageBox.Show(msg,"YES",MessageBoxButton.YesNo,MessageBoxImage.Information,MessageBoxResult.OK);
+
+            //if (result == MessageBoxResult.Yes)
+            //    Console.WriteLine("Yes");
+            //else
+            //    Console.WriteLine("No");
+
+            //ExpressionTest.Test();
+
+            //LinqXmlTest.Test1();
+            //LinqXmlTest.Test2();
+            //LinqXmlTest.Test3();
+            //LinqXmlTest.Test4();
+            LinqXmlTest.Test5();
         }
     }
 }
