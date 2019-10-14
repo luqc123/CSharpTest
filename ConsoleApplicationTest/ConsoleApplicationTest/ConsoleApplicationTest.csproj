@@ -60,6 +60,7 @@
     <Compile Include="Generics\ListNode.cs" />
     <Compile Include="Generics\DoubleList.cs" />
     <Compile Include="LambdaTest.cs" />
+    <Compile Include="LinqTest.cs" />
     <Compile Include="LinqXmlTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -115,7 +115,8 @@ namespace ConsoleApplicationTest
             //LinqXmlTest.Test2();
             //LinqXmlTest.Test3();
             //LinqXmlTest.Test4();
-            LinqXmlTest.Test5();
+            //LinqXmlTest.Test5();
+            LinqTest.Test1();
         }
     }
 }
