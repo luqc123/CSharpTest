@@ -116,7 +116,9 @@ namespace ConsoleApplicationTest
             //LinqXmlTest.Test3();
             //LinqXmlTest.Test4();
             //LinqXmlTest.Test5();
-            LinqTest.Test1();
+            //LinqTest.Test1();
+            TupleTest.Test1();
+            DictionaryTest.Test1();
         }
     }
 }
