@@ -91,5 +91,26 @@ namespace ConsoleApplicationTest
                 Console.WriteLine(Test2(value));
             }
         }
+
+        public static void Test6()
+        {
+            string s = "hello csharp world";
+            string[] r = s.Split();
+            string[] q = s.Split(' ');
+            string ss = "hello^csharp world:beijing";
+            string[] t = ss.Split(new char[] {' ','^',':'});
+            foreach(var i in r)
+            {
+                Console.WriteLine(i);
+            }
+            foreach(var i in q)
+            {
+                Console.WriteLine(i);
+            }
+            foreach(var i in t)
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 }

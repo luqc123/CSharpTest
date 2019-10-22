@@ -17,5 +17,20 @@ namespace ConsoleApplicationTest
             Tuple<int, int> t = iTpl2;
             Console.WriteLine(t);
         }
+
+        public static void Test2()
+        {
+            Func<int,Tuple<bool,long,string,double>> f = new Func<int, Tuple<bool, long, string, double>>(i=>{
+                if (i % 2 == 1)
+                    return new Tuple<bool, long, string, double>(true, 1, "1", 1.0);
+                else
+                    return new Tuple<bool, long, string, double>(false, 0, "0", 0);
+            });
+
+            var r = f(1);
+            var p = f(2);
+            Console.WriteLine(r);
+            Console.WriteLine(p);
+        }
     }
 }
