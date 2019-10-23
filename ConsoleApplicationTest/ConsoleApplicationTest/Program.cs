@@ -123,7 +123,8 @@ namespace ConsoleApplicationTest
             //HashSetTest.Test1();
             //TupleTest.Test2();
             //ClassTest.Main();
-            GenericTest.Main();
+            //GenericTest.Main();
+            //Network.TcpClientTest.Main();
         }
     }
 }
