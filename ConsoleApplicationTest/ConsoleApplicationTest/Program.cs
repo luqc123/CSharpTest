@@ -122,6 +122,8 @@ namespace ConsoleApplicationTest
             //StringTest.Test6();
             //HashSetTest.Test1();
             //TupleTest.Test2();
+            //ClassTest.Main();
+            GenericTest.Main();
         }
     }
 }
