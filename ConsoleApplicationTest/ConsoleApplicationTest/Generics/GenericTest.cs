@@ -17,7 +17,15 @@ namespace ConsoleApplicationTest.Generics
             //Performance.ReferenceTypePerfTest();
             //Performance.ValueTypePerfTest();
             //OpenTypes.Go();
-            GenericInheritance.Go();
+            //GenericInheritance.Go();
+            //VariantTest.Test1();
+            //VariantTest.Test2();
+            //SwapTest.Test1();
+            //SwapTest.Test2();
+            //SwapTest.Test3();
+            //SwapTest.Test4();
+            WhereTest.Test1();
+            
         }
 
         private static void GenericArray()
@@ -238,6 +246,184 @@ namespace ConsoleApplicationTest.Generics
         public override string ToString()
         {
             return data.ToString() + ((next != null) ? next.ToString() : String.Empty);
+        }
+    }
+
+    // invariant and contravariant 
+    public delegate TResult Func<in T, out TResult>(T arg);
+
+    internal static class VariantTest
+    {
+        public static void Test1()
+        {
+            Func<Object, ArgumentException> func = null;
+            Func<Object, Exception> outfunc = func;
+            Func<String, ArgumentException> infunc = func;
+            Func<Dictionary<Func<String,Exception>,Exception>, Exception> inoutfunc = func;
+
+            //Exception ee = inoutfunc(Activator.CreateInstance(typeof(Dictionary<Func<String, Exception>, Exception>)), new Exception());
+            try
+            {
+                Exception e = infunc("");
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.ToString());
+            }
+            finally
+            {
+                Type t = typeof(Dictionary<Func<String, Exception>,Exception>);
+                Console.WriteLine(t);
+            }
+        }
+
+        public interface IMyEnumerator<out T>: IEnumerator
+        {
+            Boolean MoveToNext();
+            T GetCurrent();
+        }
+
+        static Int32 Count(IEnumerable<Object> collection) { return 0; }
+
+        public static void Test2()
+        {
+            Int32 c = Count(new[] { "Grant" });
+            c = Count(new List<Object>());
+        }
+    }
+
+    internal sealed class GenericMethodTest<T>
+    {
+        private T data;
+
+        //like class template member partical specialize
+        public TOutput Converter<TOutput>()
+        {
+            TOutput output = (TOutput)Convert.ChangeType(data, typeof(TOutput));
+            return output;
+        }
+    }
+
+    internal static class SwapTest
+    {
+        public static void Swap<T>(ref T o1, ref T o2)
+        {
+            T tmp = o1;
+            o1 = o2;
+            o2 = tmp;
+        }
+        // ref and no ref is override 
+        public static void Swap<T>(T o1, T o2)
+        {
+            T tmp = o1;
+            o1 = o2;
+            o2 = tmp;
+        }
+
+        private static void Display(String s)
+        {
+            Console.WriteLine(s);
+        }
+        public static void Display<T>(T t)
+        {
+            Display(t.ToString());
+        }
+
+        public static void Test1()
+        {
+            String s1 = "hello";
+            String s2 = "world";
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            Swap(ref s1, ref s2);
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            Int32 i1 = 123;
+            Int32 i2 = 321;
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+            Swap<Int32>(ref i1, ref i2);
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+        }
+        public static void Test2()
+        {
+            String s1 = "hello";
+            String s2 = "world";
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            Swap(s1, s2);
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            Int32 i1 = 123;
+            Int32 i2 = 321;
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+            Swap<Int32>(i1, i2);
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+        }
+        public static void Test3()
+        {
+            String s1 = "hello";
+            Object s2 = "world";
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            Swap(s1, s2);
+            Console.WriteLine("s1={0},s2={1}", s1, s2);
+            //error
+            //Swap<String>(ref s1, ref s2);
+            //Swap<String>(s1, s2);
+            Int32 i1 = 123;
+            Object i2 = 321;
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+            Swap(i1, i2);
+            Console.WriteLine("i1={0},i2={1}", i1, i2);
+        }
+
+        public static void Test4()
+        {
+            Display("hello");
+            Display<String>("world");
+            Display(123);
+        }
+    }
+
+    internal static class WhereTest
+    {
+        private static Boolean MethodTakingAnyType<T>(T t)
+        {
+            T tmp = t;
+            Boolean b = tmp.Equals(t);
+            return b;
+        }
+        //error 
+        //not all T type contains Compareto Method
+        //private static T Min<T>(T o1, T o2)
+        //{
+         //   if (o1.CompareTo(o2) < o) reutrn o1;
+          //  else
+           //     return o2;
+        //}
+
+        private static T Min<T>(T t1,T t2) where T : IComparable<T>
+        {
+            if (t1.CompareTo(t2) < 0) return t1;
+            else
+                return t2;
+        }
+
+        internal sealed class AType { }
+        internal sealed class AType<T> { }
+        internal sealed class AType<T1, T2> { }
+        //error only with where can not override 
+        //internal sealed class AType<T1> where T1:IComparable<T> { }
+        internal sealed class AType<T1, T2, T3> where T1:IComparable<T1> { }
+        internal sealed class AType<T1,T2,T3,T4> where T1:IComparable<T1> { }
+
+        public static void Test1()
+        {
+            String s1 = "hhh";
+            String s2 = "sss";
+            Console.WriteLine("the min between s1 and s2 is {0}", Min(s1, s2));
+            //error
+            //Object not contains CompareTo
+            //because o1 is reference is a pointer actually
+            //not like c++ 
+            //Object o1 = "hhh";
+            //Object o2 = "sss";
+            //Console.WriteLine("the min between s1 and s2 is {0}", Min(o1, o2));
         }
     }
 }
