@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +25,10 @@ namespace ConsoleApplicationTest.Generics
             //SwapTest.Test2();
             //SwapTest.Test3();
             //SwapTest.Test4();
-            WhereTest.Test1();
-            
+            //WhereTest.Test1();
+            //WhereTest.Test2();
+            //WhereTest.Test3();
+            WhereTest.Test4();
         }
 
         private static void GenericArray()
@@ -392,16 +395,135 @@ namespace ConsoleApplicationTest.Generics
         //not all T type contains Compareto Method
         //private static T Min<T>(T o1, T o2)
         //{
-         //   if (o1.CompareTo(o2) < o) reutrn o1;
-          //  else
-           //     return o2;
+        //   if (o1.CompareTo(o2) < o) reutrn o1;
+        //  else
+        //     return o2;
         //}
 
-        private static T Min<T>(T t1,T t2) where T : IComparable<T>
+        private static T Min<T>(T t1, T t2) where T : IComparable<T>
         {
             if (t1.CompareTo(t2) < 0) return t1;
             else
                 return t2;
+        }
+
+        internal class Base
+        {
+            public virtual void M<T1, T2>()
+                where T1 : class
+                where T2 : struct
+            {
+            }
+            public virtual void N<T>()
+                //where T : List<Object>
+                //where T : System.Object
+                where T : System.Delegate
+            { }
+        }
+
+        internal sealed class Derived : Base
+        {
+            public override void M<T3, T4>()
+            // error 
+            //    where T3 : class
+            //    where T4 : struct 
+            { }
+            public override void N<T>()
+            {
+                base.N<T>();
+            }
+
+            public void F1<T>(T t)
+                where T : Stream
+            {
+                t.Close();
+            }
+        }
+
+        internal sealed class PrimaryConstraintOfClass<T> where T : class
+        {
+            public void M() { T temp = null; }
+            public void N<T>() where T : struct { }
+        }
+
+        internal static class PrimaryConstraintOfStaticClass<T> where T : class
+        {
+            public static void M<T>() where T : struct { }
+            public static Int32 mi = default;
+        }
+        //internal static class PrimaryConstraintOfStruct<T> where T : new()
+        internal static class PrimaryConstraintOfStruct<T> where T : struct
+        {
+            public static T Factory() { return new T(); }
+        }
+        internal sealed class SecondConstraintOfClass
+        {
+            private static List<TBase> ConvertList<T, TBase>(IList<T> list)
+                where T : TBase
+            {
+                List<TBase> baseList = new List<TBase>(list.Count);
+                for (Int32 i = 0; i < list.Count; i++)
+                    baseList.Add(list[i]);
+                return baseList;
+            }
+
+            public static void CallingConvertIList()
+            {
+                IList<String> ls = new List<String>();
+                ls.Add("Is String");
+                IList<Object> olst = ConvertList<String, Object>(ls);
+                List<IComparable> iclst = ConvertList<String, IComparable>(ls);
+                IList<IComparable<String>> icslst = ConvertList<String, IComparable<String>>(ls);
+                List<String> slst = ConvertList<String, String>(ls);
+                //error String is not subtype of Exception
+                //List<Exception> elst = ConvertList<String, Exception>(ls);
+            }
+        }
+
+        internal interface ConstructorConstraintOfInterface<T> where T : new()
+            //is unnecessary
+            //where T : struct
+        {
+
+        }
+
+        //internal sealed class ConcreteInterface : ConstructorConstraintOfInterface<Int32>
+        internal sealed class ConcreteInterface : ConstructorConstraintOfInterface<List<Int32>>
+        {
+        }
+
+        public sealed class CastingAGenericTypeVariable
+        {
+            public static void CastingTypeVariable<T>(T obj)
+            {
+                try
+                {
+                    Int32 x = (Int32)(Object)obj;
+                    String s = (String)(Object)obj;
+                }catch(InvalidCastException e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+            }
+            public static void CastingTypevariableWithAs<T>(T obj)
+            {
+                String s = obj as String;
+                Console.WriteLine("s is null is {0} true",s==null?"":"not");
+            }
+            public static void CastingTypevariableWithAs<T>(T t1,T t2) where T : class
+            {
+                //error 
+                //t1 == t2;
+                Boolean b = t1 == t2;
+            }
+            private static void SettingAGenericTypeVariableToDefaultValue<T>()
+            {
+                //not all type has constructor with none parameter
+                //T value = new T();
+                //error valut type never is null
+                //T value = null;
+                T value = default(T);
+            }
         }
 
         internal sealed class AType { }
@@ -411,7 +533,6 @@ namespace ConsoleApplicationTest.Generics
         //internal sealed class AType<T1> where T1:IComparable<T> { }
         internal sealed class AType<T1, T2, T3> where T1:IComparable<T1> { }
         internal sealed class AType<T1,T2,T3,T4> where T1:IComparable<T1> { }
-
         public static void Test1()
         {
             String s1 = "hhh";
@@ -424,6 +545,45 @@ namespace ConsoleApplicationTest.Generics
             //Object o1 = "hhh";
             //Object o2 = "sss";
             //Console.WriteLine("the min between s1 and s2 is {0}", Min(o1, o2));
+        }
+        public static void Test2()
+        {
+            Derived d = new Derived();
+            // MulticastDelegate is a subtype of Delegate
+            d.N<MulticastDelegate>();
+            FileStream fileStream = new FileStream("Test",FileMode.Open);
+            d.F1<FileStream>(fileStream);
+            d.M<Object, Int32>();
+            d.M<Object, SByte>();
+            //error value type can not be nunll
+            //Int32 i = null;
+            //nullable type can be null
+            Int32? ii = null;
+        }
+        public static void Test3()
+        {
+            PrimaryConstraintOfClass<EventArgs> p = new WhereTest.PrimaryConstraintOfClass<EventArgs>();
+            p.N<Int32>();
+            PrimaryConstraintOfStaticClass<Object>.M<Int32>();
+            Type t1 = PrimaryConstraintOfStaticClass<Hashtable>.mi.GetType(); 
+            Type t2 = PrimaryConstraintOfStaticClass<Object>.mi.GetType();
+            Console.WriteLine(t1);
+            Console.WriteLine(t2);
+            Boolean t = t1 == t2;
+            //true
+
+            Console.WriteLine("{0}", t == true ? "true" : "false");
+        }
+        public static void Test4()
+        {
+            CastingAGenericTypeVariable.CastingTypeVariable<Int32>(32);
+            CastingAGenericTypeVariable.CastingTypevariableWithAs<Int32>(32);
+            Int32? i = 0;
+            Boolean b = i == null;
+            Console.WriteLine(b);
+            Int32 ii = 0;
+            b = ii == null;
+            Console.WriteLine(b);
         }
     }
 }
