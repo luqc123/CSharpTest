@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConsoleApplicationTest.Generics;
 using System.Windows;
+using ConsoleApplicationTest.TheadTest;
 
 namespace ConsoleApplicationTest
 {
@@ -125,7 +126,8 @@ namespace ConsoleApplicationTest
             //ClassTest.Main();
             //GenericTest.Main();
             //Network.TcpClientTest.Main();
-            DelegateTest.Main();
+            //DelegateTest.Main();
+            BaseThread.Main();
         }
     }
 }
