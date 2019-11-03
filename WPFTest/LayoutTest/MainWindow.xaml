@@ -1,0 +1,45 @@
+﻿<Window x:Class="LayoutTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayoutTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="212*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="349*"/>
+        </Grid.RowDefinitions>
+        <Button Content="买" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                FontSize="21" BorderThickness="0" Height="50" Width="40"/>
+        <Button Content="卖" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                FontSize="21" BorderThickness="0" Height="50" Width="40"
+                Grid.Row="1" Grid.Column="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2">
+            <CheckBox Content="个股"/>
+            <CheckBox Content="期货"/>
+            <CheckBox Content="信用"/>
+            <CheckBox Content="期权"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="代码" VerticalAlignment="Center"/>
+            <TextBox MinWidth="100" Height="30" VerticalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock Text="产品" Grid.Column="3" HorizontalAlignment="Right" Margin="0 0 5 0"/>
+        <TextBlock Text="价格指令" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 5 0"/>
+        <Button Content="产品输入框" Grid.Column="4"/>
+        <Button Content="价格指令输入框" Grid.Column="4" Grid.Row="1"/>
+    </Grid>
+</Window>
