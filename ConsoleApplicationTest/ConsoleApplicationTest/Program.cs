@@ -128,7 +128,8 @@ namespace ConsoleApplicationTest
             //Network.TcpClientTest.Main();
             //DelegateTest.Main();
             //BaseThread.Main();
-            ThreadSync.Main();
+            //ThreadSync.Main();
+            Events.Main();
         }
     }
 }
