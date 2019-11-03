@@ -72,6 +72,7 @@
     <Compile Include="LinqXmlTest.cs" />
     <Compile Include="Network\TcpClientTest.cs" />
     <Compile Include="TheadTest\BaseThread.cs" />
+    <Compile Include="TheadTest\ThreadSync.cs" />
     <Compile Include="Work\ConfigNode.cs" />
     <Compile Include="Work\NotifyObjectBase.cs" />
     <Compile Include="Program.cs" />
