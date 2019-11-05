@@ -71,7 +71,9 @@
     <Compile Include="LinqTest.cs" />
     <Compile Include="LinqXmlTest.cs" />
     <Compile Include="Network\TcpClientTest.cs" />
+    <Compile Include="PrimitiveReferenceValueTypesTest.cs" />
     <Compile Include="TheadTest\BaseThread.cs" />
+    <Compile Include="TheadTest\ThreadASync.cs" />
     <Compile Include="TheadTest\ThreadSync.cs" />
     <Compile Include="Work\ConfigNode.cs" />
     <Compile Include="Work\NotifyObjectBase.cs" />

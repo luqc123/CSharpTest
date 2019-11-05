@@ -20,7 +20,7 @@ namespace ConsoleApplicationTest.TheadTest
             //will block
             //Test5();
             //Test6();
-            Test7();
+            //Test7();
         }
 
         public static void GetProcessInfo()
@@ -108,6 +108,7 @@ namespace ConsoleApplicationTest.TheadTest
             });
             Thread t2 = new Thread(() =>
             {
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 Console.WriteLine("this is a background thread");
                 DoSomeWork(100);
             });

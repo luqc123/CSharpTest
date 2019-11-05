@@ -129,7 +129,9 @@ namespace ConsoleApplicationTest
             //DelegateTest.Main();
             //BaseThread.Main();
             //ThreadSync.Main();
-            Events.Main();
+            //Events.Main();
+            //ThreadASync.Main();
+            PrimitiveReferenceValueTypesTest.Main();
         }
     }
 }
