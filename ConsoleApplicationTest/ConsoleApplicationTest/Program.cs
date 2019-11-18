@@ -131,7 +131,8 @@ namespace ConsoleApplicationTest
             //ThreadSync.Main();
             //Events.Main();
             //ThreadASync.Main();
-            PrimitiveReferenceValueTypesTest.Main();
+            //PrimitiveReferenceValueTypesTest.Main();
+            AttributeTest.Main();
         }
     }
 }
