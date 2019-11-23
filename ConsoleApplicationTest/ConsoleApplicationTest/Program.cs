@@ -132,7 +132,9 @@ namespace ConsoleApplicationTest
             //Events.Main();
             //ThreadASync.Main();
             //PrimitiveReferenceValueTypesTest.Main();
-            AttributeTest.Main();
+            //AttributeTest.Main();
+            //EnumeratorTest.Main();
+            ConcurrentCollectionTest.Main();
         }
     }
 }
