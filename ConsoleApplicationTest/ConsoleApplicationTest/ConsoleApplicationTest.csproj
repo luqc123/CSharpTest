@@ -47,12 +47,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="VectorClass, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\VectorCalss\bin\Debug\VectorClass.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionTest.cs" />
     <Compile Include="ArrayTest.cs" />
     <Compile Include="AttributeTest.cs" />
+    <Compile Include="AttributeTest2.cs" />
     <Compile Include="ClassTest.cs" />
     <Compile Include="CollectionTest.cs" />
     <Compile Include="ConcurrentCollectionTest.cs" />
@@ -60,7 +65,9 @@
     <Compile Include="DependencyPropertyTest.cs" />
     <Compile Include="DictionaryTest.cs" />
     <Compile Include="EnumeratorTest.cs" />
+    <Compile Include="EnumTest.cs" />
     <Compile Include="EventTest.cs" />
+    <Compile Include="EventTest2.cs" />
     <Compile Include="ExpressionTest.cs" />
     <Compile Include="Generics\Document.cs" />
     <Compile Include="Generics\DocumentManager.cs" />
@@ -76,7 +83,9 @@
     <Compile Include="PrimitiveReferenceValueTypesTest.cs" />
     <Compile Include="TheadTest\BaseThread.cs" />
     <Compile Include="TheadTest\ThreadASync.cs" />
+    <Compile Include="TheadTest\ThreadPool.cs" />
     <Compile Include="TheadTest\ThreadSync.cs" />
+    <Compile Include="WeakReferenceTest.cs" />
     <Compile Include="Work\ConfigNode.cs" />
     <Compile Include="Work\NotifyObjectBase.cs" />
     <Compile Include="Program.cs" />

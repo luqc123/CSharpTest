@@ -125,7 +125,6 @@ namespace ConsoleApplicationTest
             //TupleTest.Test2();
             //ClassTest.Main();
             //GenericTest.Main();
-            //Network.TcpClientTest.Main();
             //DelegateTest.Main();
             //BaseThread.Main();
             //ThreadSync.Main();
@@ -134,7 +133,12 @@ namespace ConsoleApplicationTest
             //PrimitiveReferenceValueTypesTest.Main();
             //AttributeTest.Main();
             //EnumeratorTest.Main();
-            ConcurrentCollectionTest.Main();
+            //ConcurrentCollectionTest.Main();
+            //AttributeTest2.Main();
+            //ThreadPoolTest.Main();
+            //EnumTest.Main();
+            //WeakReferenceTest.Main();
+            EventTest2.Main();
         }
     }
 }

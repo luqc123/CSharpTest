@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationTest", "ConsoleApplicationTest\ConsoleApplicationTest.csproj", "{483C52D7-F7CF-470F-AFC5-0D4AD7ED2C2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorClass1", "VectorCalss\VectorClass1.csproj", "{FFACA8A5-0E10-4965-9CB2-B6EFBC8BBD34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{483C52D7-F7CF-470F-AFC5-0D4AD7ED2C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{483C52D7-F7CF-470F-AFC5-0D4AD7ED2C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{483C52D7-F7CF-470F-AFC5-0D4AD7ED2C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFACA8A5-0E10-4965-9CB2-B6EFBC8BBD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFACA8A5-0E10-4965-9CB2-B6EFBC8BBD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFACA8A5-0E10-4965-9CB2-B6EFBC8BBD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFACA8A5-0E10-4965-9CB2-B6EFBC8BBD34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC5581C0-33EA-4137-8F4B-12C5019ADFFF}
 	EndGlobalSection
 EndGlobal
