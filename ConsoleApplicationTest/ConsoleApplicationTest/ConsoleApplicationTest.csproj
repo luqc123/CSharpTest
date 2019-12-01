@@ -64,11 +64,15 @@
     <Compile Include="DelegateTest.cs" />
     <Compile Include="DependencyPropertyTest.cs" />
     <Compile Include="DictionaryTest.cs" />
+    <Compile Include="DisposableTest.cs" />
     <Compile Include="EnumeratorTest.cs" />
     <Compile Include="EnumTest.cs" />
     <Compile Include="EventTest.cs" />
     <Compile Include="EventTest2.cs" />
+    <Compile Include="EventTest3.cs" />
+    <Compile Include="EventTest4.cs" />
     <Compile Include="ExpressionTest.cs" />
+    <Compile Include="FileTest.cs" />
     <Compile Include="Generics\Document.cs" />
     <Compile Include="Generics\DocumentManager.cs" />
     <Compile Include="Generics\GenericTest.cs" />

@@ -138,7 +138,11 @@ namespace ConsoleApplicationTest
             //ThreadPoolTest.Main();
             //EnumTest.Main();
             //WeakReferenceTest.Main();
-            EventTest2.Main();
+            //EventTest2.Main();
+            //EventTest3.Main();
+            //EventTest4.Main();
+            //DisposableTest.Main();
+            FileTest.Main();
         }
     }
 }
