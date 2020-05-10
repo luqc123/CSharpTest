@@ -25,8 +25,6 @@ namespace WindowsFormsTest
             listBox1.SelectedIndex = anIndex;
         }
 
-        string[] dataSource = new string[] { "1", "2", "3" };
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Button clicked.");
