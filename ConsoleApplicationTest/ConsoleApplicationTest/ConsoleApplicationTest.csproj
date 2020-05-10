@@ -72,7 +72,6 @@
     <Compile Include="EventTest3.cs" />
     <Compile Include="EventTest4.cs" />
     <Compile Include="ExpressionTest.cs" />
-    <Compile Include="FileTest.cs" />
     <Compile Include="Generics\Document.cs" />
     <Compile Include="Generics\DocumentManager.cs" />
     <Compile Include="Generics\GenericTest.cs" />
@@ -80,6 +79,7 @@
     <Compile Include="Generics\ListNode.cs" />
     <Compile Include="Generics\DoubleList.cs" />
     <Compile Include="HashSetTest.cs" />
+    <Compile Include="Interoperability\PInvokeTest.cs" />
     <Compile Include="LambdaTest.cs" />
     <Compile Include="LinqTest.cs" />
     <Compile Include="LinqXmlTest.cs" />
@@ -89,6 +89,7 @@
     <Compile Include="TheadTest\ThreadASync.cs" />
     <Compile Include="TheadTest\ThreadPool.cs" />
     <Compile Include="TheadTest\ThreadSync.cs" />
+    <Compile Include="TheadTest\TPLTest.cs" />
     <Compile Include="WeakReferenceTest.cs" />
     <Compile Include="Work\ConfigNode.cs" />
     <Compile Include="Work\NotifyObjectBase.cs" />

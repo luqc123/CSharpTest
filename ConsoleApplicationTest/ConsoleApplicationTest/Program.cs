@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ConsoleApplicationTest.Generics;
 using System.Windows;
 using ConsoleApplicationTest.TheadTest;
+using ConsoleApplicationTest.Interoperability;
 
 namespace ConsoleApplicationTest
 {
@@ -142,7 +143,9 @@ namespace ConsoleApplicationTest
             //EventTest3.Main();
             //EventTest4.Main();
             //DisposableTest.Main();
-            FileTest.Main();
+            //FileTest.Main();
+            //TPLTest.Main();
+            PInvokeTest.Main();
         }
     }
 }
