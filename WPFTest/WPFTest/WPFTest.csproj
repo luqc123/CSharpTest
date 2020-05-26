@@ -71,6 +71,9 @@
     <Compile Include="AttachedEventTest.xaml.cs">
       <DependentUpon>AttachedEventTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AttatchedPropertyTest.xaml.cs">
+      <DependentUpon>AttatchedPropertyTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ButtonsWithContent.xaml.cs">
       <DependentUpon>ButtonsWithContent.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,10 @@
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
     <Page Include="AttachedEventTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AttatchedPropertyTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
