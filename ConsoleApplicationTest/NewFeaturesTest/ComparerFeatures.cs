@@ -10,19 +10,6 @@ namespace NewFeaturesTest
 {
     public class ComparerFeatures
     {
-<<<<<<< HEAD
-        public class ProductVersionOneComparer : IComparer
-        {
-            public int Compare(object x, object y)
-            {
-                ProductVersionOne one = (ProductVersionOne)x;
-                ProductVersionOne two = (ProductVersionOne)y;
-                return one.Name.CompareTo(two.Name);
-            }
-        }
-
-        public class ProductVersionTwoComparer : IComparer<ProductVersionTwo>
-=======
         //c# 1 
         public class ProductComparerVersionOne : IComparer
         {
@@ -36,7 +23,6 @@ namespace NewFeaturesTest
 
         //c# 2 generic
         public class ProductComparerVersionTwo : IComparer<ProductVersionTwo>
->>>>>>> aac4832a7634678ab87a600435d0c27144fa805f
         {
             public int Compare(ProductVersionTwo x, ProductVersionTwo y)
             {
