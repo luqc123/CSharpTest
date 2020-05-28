@@ -27,5 +27,14 @@ namespace NewFeaturesTest
             Action<ProductVersionTwo> print = Console.WriteLine;
             matches.ForEach(print);
         }
+
+        public static void QueryVersionThree()
+        {
+            var products = ProductVersionThree.GetSomeProduct();
+            foreach(var p in products.Where(x=>x.Price>10m))
+            {
+                Console.WriteLine(p);
+            }
+        }
     }
 }
