@@ -10,6 +10,7 @@ namespace NewFeaturesTest
 {
     public class QueryFeatures
     {
+        //c# 1
         public static void QueryVersionOne() 
         {
             ArrayList products = ProductVersionOne.GetSomeProduct();
@@ -19,6 +20,7 @@ namespace NewFeaturesTest
                     Console.WriteLine(p);
             }
         }
+        //c# 2
         public static void QueryVersionTwo()
         {
             List<ProductVersionTwo> products = ProductVersionTwo.GetSomeProduct();
@@ -28,6 +30,7 @@ namespace NewFeaturesTest
             matches.ForEach(print);
         }
 
+        //c# 3
         public static void QueryVersionThree()
         {
             var products = ProductVersionThree.GetSomeProduct();

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using static NewFeaturesTest.ComparerFeatures;
 using static NewFeaturesTest.ClassFeatures;
 using static NewFeaturesTest.QueryFeatures;
+using System.Runtime.InteropServices;
 
 namespace NewFeaturesTest
 {

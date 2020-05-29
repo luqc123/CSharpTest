@@ -110,7 +110,7 @@ namespace NewFeaturesTest
             }
         }
 
-        //c# 4
+        //c# 4 readonly
         public class ProductVersionFour
         {
             readonly string name;
