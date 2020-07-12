@@ -1,0 +1,26 @@
+﻿<Window x:Class="StyleTest.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StyleTest"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <Window.Resources>
+        <local:TextLengthToBoolConverter x:Key="converter"/>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self},Path=Text.Length,Converter={StaticResource converter}}" Value="false">
+                    <Setter Property="Background" Value="Red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBox Text="21323" ></TextBox>
+            <TextBox Text="21323" ></TextBox>
+            <TextBox Text="21323" ></TextBox>
+        </StackPanel> 
+    </Grid>
+</Window>

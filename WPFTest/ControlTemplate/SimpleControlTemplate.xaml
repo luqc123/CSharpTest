@@ -1,0 +1,42 @@
+﻿<Window x:Class="ControlTemplate.SimpleControlTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlTemplate"
+        xmlns:arrayList="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d" Width="400" Height="200">
+    <Window.Resources>
+        <DataTemplate DataType="Unit">
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <Rectangle Fill="Red" Width="{Binding XPath=@Price}"/>
+                    <TextBlock Text="{Binding XPath=@Price}"/>
+                </Grid>
+                <TextBlock Text="{Binding XPath=@Year}"/>
+            </StackPanel>
+        </DataTemplate>
+        <!--<arrayList:ArrayList x:Key="arrayList">
+            <local:Unit Year="2017" Price="100"/>
+            <local:Unit Year="2018" Price="120"/>
+            <local:Unit Year="2019" Price="180"/>
+            <local:Unit Year="2020" Price="80"/>
+            <arrayList:ArrayList/>-->
+        <XmlDataProvider x:Key="arrayList" XPath="Unitss/Unit">
+            <x:XData>
+                <Unitss xmlns="">
+                    <Unit Price="100" Year="2000"></Unit>
+                    <Unit Price="120" Year="2000"></Unit>
+                    <Unit Price="140" Year="2000"></Unit>
+                    <Unit Price="160" Year="2000"></Unit>
+                </Unitss>
+            </x:XData>
+        </XmlDataProvider>
+    </Window.Resources>
+    <StackPanel>
+        <!--<ListBox ItemsSource="{StaticResource arrayList}"></ListBox>
+        <ComboBox ItemsSource="{StaticResource arrayList}"></ComboBox>-->
+        <ListBox ItemsSource="{Binding Source={StaticResource arrayList}}"/>
+        <ComboBox ItemsSource="{Binding Source={StaticResource arrayList}}"/>
+    </StackPanel>
+</Window>

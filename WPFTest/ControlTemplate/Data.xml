@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Data xmlns="">
+  <Grade Name="one grade">
+    <Class Name="A">
+      <Group Name="1"></Group>
+      <Group Name="2"></Group>
+      <Group Name="3"></Group>
+    </Class>
+  </Grade>
+  <Grade Name="two grade">
+    <Class Name="B">
+      <Group Name="1"></Group>
+      <Group Name="2"></Group>
+      <Group Name="3"></Group>
+    </Class>
+  </Grade>
+  <Grade Name="three grade">
+    <Class Name="C">
+      <Group Name="1"></Group>
+      <Group Name="2"></Group>
+      <Group Name="3"></Group>
+    </Class>
+  </Grade>
+  <Operation Name="file" Gesture="F">
+    <Operation Name="new" Gesture="N">
+      <Operation Name="project" Gesture="Control+P"/>
+      <Operation Name="website" Gesture="Control+W"/>
+      <Operation Name="doc" Gesture="Control+D"/>
+    </Operation>
+  </Operation>
+  <Operation Name="edit" Gesture="F">
+      <Operation Name="copy" Gesture="Control+C"/>
+      <Operation Name="delete" Gesture="Control+D"/>
+      <Operation Name="cut" Gesture="Control+X"/>
+  </Operation>
+</Data>

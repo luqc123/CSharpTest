@@ -1,0 +1,25 @@
+﻿<Window x:Class="AnimationAndPainting.Lines"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnimationAndPainting"
+        mc:Ignorable="d"
+        Title="Line"
+         Height="450" Width="800">
+    <Grid>
+        <Line X1="10" Y1="20" X2="800" Y2="20" Stroke="Red" StrokeThickness="3"/>
+        <Line X1="10" Y1="50" X2="800" Y2="50" Stroke="Beige" StrokeThickness="1" StrokeDashArray="3"/>
+        <Line X1="10" Y1="80" X2="800" Y2="80" Stroke="Pink" StrokeThickness="2" StrokeDashArray="10"/>
+        <Line X1="10" Y1="150" X2="800" Y2="150" Stroke="Blue" StrokeThickness="2" StrokeDashArray="3" StrokeEndLineCap="Flat"/>
+        <Line X1="10" Y1="200" X2="800" Y2="200" Stroke="Blue" StrokeThickness="2" StrokeDashArray="3" StrokeEndLineCap="Round"/>
+        <Line X1="10" Y1="250" X2="800" Y2="250" StrokeThickness="10" StrokeDashArray="3" StrokeEndLineCap="Round">
+            <Line.Stroke>
+                <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                    <GradientStop Color="Blue"/>
+                    <GradientStop Offset="1"/>
+                </LinearGradientBrush>
+            </Line.Stroke>
+        </Line>
+    </Grid>
+</Window>
