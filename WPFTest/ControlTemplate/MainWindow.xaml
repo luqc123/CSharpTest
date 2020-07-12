@@ -5,31 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ControlTemplate"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
-                    <GradientStop Color="Black" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBox Margin="5" Style="{DynamicResource TextBoxStyle1}"></TextBox>
-            <TextBox Margin="5" Style="{DynamicResource TextBoxStyle1}"></TextBox>
-            <Button Content="OK" HorizontalAlignment="Center"></Button>
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <local:AutomakerToLogoPathConverter x:Key="logoConverter"/>
+        <local:NameToPhotoPathConverter x:Key="photoConverter"/>
+        <DataTemplate x:Key="carDetailViewTemplate">
             <Grid>
-                <ListBox>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Horizontal"></StackPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <TextBlock Text="Hello"/>
-                    <TextBlock Text="World"/>
-                    <TextBlock Text=","/>
-                    <TextBlock Text="Pengman"/>
-                </ListBox>
+                <StackPanel>
+                    <Image Width="400" Height="250" 
+                           Source="{Binding Name,Converter={StaticResource photoConverter}}"></Image>
+                    <StackPanel Orientation="Horizontal" Margin="5,0">
+                        <TextBlock Text="Automaker:"  FontSize="20" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Automaker}" FontSize="20" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,0">
+                        <TextBlock Text="Name:" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Name}" Margin="5,0"/>
+                        <TextBlock Text="Year:" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Year}" Margin="5,0"/>
+                        <TextBlock Text="TopSpeed:" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding TopSpeed}" Margin="5,0"/>
+                    </StackPanel>
+                </StackPanel>
             </Grid>
-        </StackPanel>
-    </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="carListItemViewTemplate">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Name,Converter={StaticResource logoConverter}}" Width="64" Height="64"/>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Year}" FontSize="14"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel Orientation="Horizontal">
+        <UserControl ContentTemplate="{StaticResource carDetailViewTemplate}" 
+            Content="{Binding SelectedItem,ElementName=listBoxCars}">
+        </UserControl>
+        <ListBox x:Name="listBoxCars" ItemTemplate="{StaticResource carListItemViewTemplate}">
+        </ListBox>
+    </StackPanel>
 </Window>

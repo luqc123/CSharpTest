@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ControlTemplate.CarDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ControlTemplate"
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel>
+            <Image x:Name="imageName" Width="400" Height="250"></Image>
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <TextBlock Text="Automaker:"  FontSize="20" FontWeight="Bold"/>
+                <TextBlock x:Name="textAutomaker" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <TextBlock Text="Name:" FontWeight="Bold"/>
+                <TextBlock x:Name="textName" Margin="5,0"/>
+                <TextBlock Text="Year:" FontWeight="Bold"/>
+                <TextBlock x:Name="textYear" Margin="5,0"/>
+                <TextBlock Text="TopSpeed:" FontWeight="Bold"/>
+                <TextBlock x:Name="textTopSpeed" Margin="5,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

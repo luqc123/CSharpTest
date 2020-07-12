@@ -22,7 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>7.1</LangVersion>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -80,6 +80,7 @@
     <Compile Include="Generics\ListNode.cs" />
     <Compile Include="Generics\DoubleList.cs" />
     <Compile Include="HashSetTest.cs" />
+    <Compile Include="InterfaceTest.cs" />
     <Compile Include="Interoperability\PInvokeTest.cs" />
     <Compile Include="LambdaTest.cs" />
     <Compile Include="LinqTest.cs" />

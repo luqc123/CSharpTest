@@ -145,7 +145,8 @@ namespace ConsoleApplicationTest
             //DisposableTest.Main();
             //FileTest.Main();
             //TPLTest.Main();
-            PInvokeTest.Main();
+            //PInvokeTest.Main();
+            InterfaceTest.Main();
         }
     }
 }
