@@ -9,7 +9,6 @@ namespace CommandTest
     public interface IView
     {
         bool IsChanged { get; set; }
-
         void SetBinding();
         void Refresh();
         void Clear();

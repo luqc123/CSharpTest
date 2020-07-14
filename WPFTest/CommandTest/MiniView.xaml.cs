@@ -18,7 +18,7 @@ namespace CommandTest
     /// <summary>
     /// Interaction logic for MiniView.xaml
     /// </summary>
-    public partial class MiniView : UserControl,IView
+    public partial class MiniView : UserControl, IView
     {
         public MiniView()
         {
@@ -26,9 +26,6 @@ namespace CommandTest
         }
 
         public bool IsChanged { get; set; }
-        public void SetBinding() { }
-        public void Refresh() { }
-        public void Save() { }
 
         public void Clear()
         {
@@ -36,6 +33,21 @@ namespace CommandTest
             this.textBox2.Clear();
             this.textBox3.Clear();
             this.textBox4.Clear();
+        }
+
+        public void Refresh()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetBinding()
+        {
+            throw new NotImplementedException();
         }
     }
 }

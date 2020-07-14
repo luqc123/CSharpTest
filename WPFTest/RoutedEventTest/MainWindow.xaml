@@ -1,0 +1,23 @@
+﻿<Window x:Class="RoutedEventTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutedEventTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="grid1" ButtonBase.Click="Button_Click">
+        <Grid x:Name="grid2" ButtonBase.Click="Button_Click">
+            <Grid x:Name="grid3" ButtonBase.Click="Button_Click">
+                <Grid x:Name="grid4" ButtonBase.Click="Button_Click">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="listBox"></ListBox>
+                    <Button Content="OK" ButtonBase.Click="Button_Click" Grid.Row="1"></Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

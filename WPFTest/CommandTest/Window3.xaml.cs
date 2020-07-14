@@ -15,17 +15,16 @@ using System.Windows.Shapes;
 namespace CommandTest
 {
     /// <summary>
-    /// Interaction logic for CustomCommandTest.xaml
+    /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class CustomCommandTest : Window
+    public partial class Window3 : Window
     {
-        public CustomCommandTest()
+        public Window3()
         {
             InitializeComponent();
-
-            ClearCommand clearCmd = new ClearCommand();
-            this.ctrclear.Command = clearCmd;
-            this.ctrclear.CommandTarget = this.miniView;
+            ClearCommand clearCommand = new ClearCommand();
+            ctrClear.Command = clearCommand;
+            ctrClear.CommandTarget = miniView;
         }
     }
 }

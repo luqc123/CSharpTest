@@ -1,17 +1,16 @@
-﻿<Window x:Class="CommandTest.CustomCommandTest"
+﻿<Window x:Class="CommandTest.Window3"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommandTest"
         mc:Ignorable="d"
-        Title="CustomCommandTest" Height="450" Width="800">
+        Title="Window3" Height="450" Width="800">
     <StackPanel>
-        <local:MyCommandSource x:Name="ctrclear" Margin="10">
-            <TextBlock Text="Clear" FontSize="24" TextAlignment="Center"
-                Background="LightGreen" Width="80"></TextBlock> 
+        <local:MyCommandSource x:Name="ctrClear" Margin="10">
+            <TextBlock Text="Clear" FontSize="17" TextAlignment="Center"
+                       Background="LightBlue" Width="80"/>
         </local:MyCommandSource>
-    <local:MiniView x:Name="miniView"/>
+        <local:MiniView x:Name="miniView"/>
     </StackPanel>
-
 </Window>
