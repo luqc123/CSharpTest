@@ -215,5 +215,7 @@ namespace CommandTest
         {
             AddWeakReferenceHandler(ref handlers, handler, -1);
         }
+
+
     }
 }
