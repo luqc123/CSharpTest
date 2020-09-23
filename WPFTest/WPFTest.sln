@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyTest", "PropertyTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutedEventTest", "RoutedEventTest\RoutedEventTest.csproj", "{3CAD8515-9914-4DF2-A319-580C68136375}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControlsTest", "CustomControlsTest\CustomControlsTest.csproj", "{E71390B8-ED7C-44E0-87BB-541CA789780A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "CustomControls\CustomControls.csproj", "{5C729AE3-5766-47C4-861A-E682CADDEE89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{3CAD8515-9914-4DF2-A319-580C68136375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CAD8515-9914-4DF2-A319-580C68136375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CAD8515-9914-4DF2-A319-580C68136375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71390B8-ED7C-44E0-87BB-541CA789780A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71390B8-ED7C-44E0-87BB-541CA789780A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71390B8-ED7C-44E0-87BB-541CA789780A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71390B8-ED7C-44E0-87BB-541CA789780A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C729AE3-5766-47C4-861A-E682CADDEE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C729AE3-5766-47C4-861A-E682CADDEE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C729AE3-5766-47C4-861A-E682CADDEE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C729AE3-5766-47C4-861A-E682CADDEE89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

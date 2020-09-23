@@ -40,10 +40,10 @@ namespace ConsoleApplicationTest.TheadTest
             int threadId = 0;
             RunOnThreadPool poolDelegate = Test;
 
-            var t = new Thread(() => Test(out threadId));
-            t.Start();
-            t.Join();
-            WriteLine($"thread id : {threadId}");
+            //var t = new Thread(() => Test(out threadId));
+            //t.Start();
+            //t.Join();
+            //WriteLine($"thread id : {threadId}");
 
             IAsyncResult r = poolDelegate.BeginInvoke(out threadId, Callback, "a delegate asynchronous call");
             r.AsyncWaitHandle.WaitOne();
@@ -54,8 +54,9 @@ namespace ConsoleApplicationTest.TheadTest
             WriteLine($"Result : {result}");
 
             WriteLine($"Main Thread id : {CurrentThread.ManagedThreadId}");
-            WriteLine($"Main Thread id : {CurrentThread.ThreadState}");
+            WriteLine($"Main Thread State : {CurrentThread.ThreadState}");
             Sleep(TimeSpan.FromSeconds(2));
+            Console.ReadLine();
         }
     }
 }

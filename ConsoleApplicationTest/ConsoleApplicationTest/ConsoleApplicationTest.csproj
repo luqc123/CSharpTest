@@ -38,6 +38,8 @@
     <StartupObject>ConsoleApplicationTest.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -77,6 +79,7 @@
     <Compile Include="Generics\DocumentManager.cs" />
     <Compile Include="Generics\GenericTest.cs" />
     <Compile Include="Generics\IDocument.cs" />
+    <Compile Include="Generics\IMyEnumerator.cs" />
     <Compile Include="Generics\ListNode.cs" />
     <Compile Include="Generics\DoubleList.cs" />
     <Compile Include="HashSetTest.cs" />
